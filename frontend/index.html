@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDo List</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Todo List</h1>
+    <img src="./curve.png" width="624" height="28" alt="Curve">
+    <h2>Good Day!! What are you going to do today?</h2>
+    <div class="add-task-section">
+      <div class="row">
+        <input type="text" id="taskInput" placeholder="Add Task">
+        <input type="date" id="dueDateInput">
+        <div class="priority">
+          <label>
+            <input type="radio" name="priority" value="low" checked> Low
+          </label>
+          <label>
+            <input type="radio" name="priority" value="medium"> Medium
+          </label>
+          <label>
+            <input type="radio" name="priority" value="high"> High
+          </label>
+        </div>
+        <button id="addTaskButton">Add</button>
+      </div>
+    </div>
+    <div class="view-tasks-section">
+      <div class="filters">
+        <label for="sortBy">Sort By:</label>
+        <select id="sortBy" class="border p-2">
+          <option value="">None</option>
+          <option value="dueDate">Due Date</option>
+          <option value="priority">Priority</option>
+        </select>
+        <label for="filterBy" class="ml-4">Filter By:</label>
+        <select id="filterBy" class="border p-2">
+          <option value="">None</option>
+          <option value="priority">Priority</option>
+          <option value="completed">Completed</option>
+        </select>
+        <select id="filterValue" class="border p-2 ml-2">
+          <option value="">None</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+          <option value="true">Completed</option>
+          <option value="false">Not Completed</option>
+        </select>
+        <button id="filterButton">Apply</button>
+      </div>
+      <ul id="taskList" class="list-container"></ul>
+    </div>
+  </div>
+
+  
+  <div id="popupForm" class="popup-form">
+    <div class="popup-content">
+      <span class="close">&times;</span>
+      <h2>Update Task</h2>
+      <form id="updateTaskForm">
+        <input type="text" id="updateTaskInput" required>
+        <input type="date" id="updateTaskDate" required>
+        <button type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="messageContainer" class="message-container"></div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
